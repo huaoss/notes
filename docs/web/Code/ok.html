@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+
+    <script>
+        function fn() { return fn; }
+        console.log(new fn() instanceof fn)
+
+            (function () {
+                var a = b = 5;
+            })();
+        console.log(a)
+        console.log(b)
+
+        console.log(str);
+        setTimeout(function () {
+            console.log('two')
+        }, 0)
+        var str = 'one';
+        new Promise(function (resolve, reject) {
+            console.log('false' == true)
+            resolve()
+        }).then(function (a) {
+            console.log(a)
+        })
+        console.log('five')
+
+        var length = 10;
+        function fn() {
+            console.log(this.length);
+        }
+        var obj = {
+            length: 5,
+            method: function (fn) {
+                fn();
+                arguments[0]();
+            }
+        }
+        obj.method(fn, 1)
+
+        var ul = document.getElementById('list');
+        console.log(ul)
+        var list = ul.getElementByTageName('li')[0];
+        var str = "";
+        for (var i = list.length; i >= 0; i--) {
+            str += "<li>" + list[i].innerHTML + "</li>";
+        }
+        ul.innerHTML(str);
+
+
+
+
+    </script>
+
+</body>
+
+</html>
